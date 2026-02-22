@@ -1,0 +1,37 @@
+name: Deploy to Kind on EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy on EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ec2-user@YOUR_EC2_IP << 'EOF'
+
+            # Go to home directory
+            cd /home/ec2-user
+
+            # Clone repo if not exists
+            if [ ! -d "three-tier-app" ]; then
+              git clone https://github.com/SURAJ-Dymo1/project3.git project3
+            fi
+
+            # Pull latest changes
+            cd three-tier-app
+            git pull origin main
+
+            # Apply Kubernetes manifests
+            kubectl apply -f k8s-manifests/
+
+          EOF
