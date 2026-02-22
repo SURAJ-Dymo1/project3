@@ -28,7 +28,7 @@ jobs:
             fi
 
             # Pull latest changes
-            cd three-tier-app
+            cd project3
             git pull origin main
 
             # Apply Kubernetes manifests
