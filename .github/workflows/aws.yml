@@ -18,6 +18,7 @@ jobs:
       - name: Deploy on EC2
         run: |
           ssh -o StrictHostKeyChecking=no ec2-user@98.84.153.219 << 'EOF'
+            sudo yum install -y git
 
             # Go to home directory
             cd /home/ec2-user
