@@ -192,3 +192,7 @@ Tell me.
 
 
 kubectl port-forward service/frontend 8080:80 --address 0.0.0.0
+
+sudo systemctl status firewalld
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --reload
