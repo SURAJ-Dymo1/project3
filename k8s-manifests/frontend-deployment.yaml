@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: surajmane121045/project_one_frontend:77a93063
+        image: surajmane121045/project_one_frontend:44542dd2
         ports:
         - containerPort: 80

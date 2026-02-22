@@ -189,3 +189,6 @@ Do you want to use:
 * Proper GitOps with ArgoCD?
 
 Tell me.
+
+
+kubectl port-forward service/frontend 8080:80 --address 0.0.0.0
