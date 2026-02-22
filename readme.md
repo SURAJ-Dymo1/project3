@@ -192,7 +192,15 @@ Tell me.
 
 
 kubectl port-forward service/frontend 8080:80 --address 0.0.0.0
+kubectl port-forward service/backend 8082:8082 --address 0.0.0.0
+
+kubectl rollout restart deployment frontend
 
 sudo systemctl status firewalld
 sudo firewall-cmd --permanent --add-port=8080/tcp
 sudo firewall-cmd --reload
+
+kubectl delete deployments --all
+kubectl delete services --all
+kubectl delete pods --all
+kubectl delete replicasets --all
