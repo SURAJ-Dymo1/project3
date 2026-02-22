@@ -207,6 +207,6 @@ kubectl delete replicasets --all
 
 # For Specific platform
 docker buildx create --use
-docker buildx build --platform linux/amd64 -t surajmane121045/project_one_frontend:10 .
+docker build -t surajmane121045/project_one_frontend:11 .
 docker push surajmane121045/project_one_frontend:
 docker buildx build --platform linux/amd64 -t surajmane121045/project_one_frontend:10 --push .
