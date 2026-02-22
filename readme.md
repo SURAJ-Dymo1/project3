@@ -190,7 +190,7 @@ Do you want to use:
 
 Tell me.
 
-http://3.84.187.133:8080
+http://3.84.187.133:8080/todos
 
 kubectl port-forward service/frontend 8080:80 --address 0.0.0.0
 kubectl port-forward service/backend 8082:8082 --address 0.0.0.0
